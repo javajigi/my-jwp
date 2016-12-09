@@ -74,8 +74,7 @@
                                           <a class="link-modify-article" href="/questions/{{question.id}}/answers/{{id}}/form">수정</a>
                                       </li>
                                       <li>
-                                          <form class="form-delete" action="/questions/{{question.id}}/answers/{{id}}" method="POST">
-                                              <input type="hidden" name="_method" value="DELETE">
+                                          <form class="form-delete delete-answer-form" action="/api/questions/{{question.id}}/answers/{{id}}" method="POST">
                                               <button type="submit" class="link-delete-article">삭제</button>
                                           </form>
                                       </li>
@@ -83,7 +82,7 @@
                               </div>
                           </article>
                           {{/answers}}
-                          <form class="answer-write" method="post" action="/questions/{{id}}/answers">
+                          <form class="answer-write" method="post" action="/api/questions/{{id}}/answers">
                               <div class="form-group" style="padding:14px;">
                                   <textarea class="form-control" placeholder="Update your status" name="contents"></textarea>
                               </div>
@@ -106,7 +105,7 @@
 				<img src="https://graph.facebook.com/v2.3/1324855987/picture" class="article-author-thumb" alt="">
 			</div>
 			<div class="article-header-text">
-				{0}
+				<a href="/users/1/자바지기" class="article-author-name">{0}</a>
 				<div class="article-header-time">{1}</div>
 			</div>
 		</div>
@@ -119,8 +118,7 @@
 				<a class="link-modify-article" href="/api/qna/updateAnswer/{3}">수정</a>
 			</li>
 			<li>
-				<form class="form-delete" action="/api/qna/deleteAnswer" method="POST">
-					<input type="hidden" name="answerId" value="{4}" />
+				<form class="form-delete delete-answer-form" action="/api/questions/{3}/answers/{4}" method="POST">
 					<button type="submit" class="link-delete-article">삭제</button>
 				</form>
 			</li>

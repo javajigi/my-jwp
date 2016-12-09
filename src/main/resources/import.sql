@@ -3,3 +3,6 @@ INSERT INTO USER (ID, USER_ID, PASSWORD, NAME, EMAIL) VALUES (2, 'sanjigi', 'tes
 
 INSERT INTO QUESTION (id, writer_id, title, contents, deleted, create_date) VALUES(1, 1,'국내에서 Ruby on Rails와 Play가 ','Ruby on Rails(이하 RoR)는', true, CURRENT_TIMESTAMP());
 INSERT INTO QUESTION (id, writer_id, title, contents, deleted, create_date) VALUES(2, 2,'산지기가 쓴 글','산지기는 군생활 때 나의 별명. 자바지기의 유래는 산지기', false, CURRENT_TIMESTAMP());
+
+INSERT INTO ANSWER (id, writer_id, question_id, contents, deleted, create_date) VALUES(1, 2, 2, '댓글 1', false, CURRENT_TIMESTAMP());
+INSERT INTO ANSWER (id, writer_id, question_id, contents, deleted, create_date) VALUES(2, 2, 2, '댓글 2', false, CURRENT_TIMESTAMP());

@@ -5,22 +5,28 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity
 public class User {
 	@Id
 	@GeneratedValue
+	@JsonProperty
 	private Long id;
 	
 	@Column(unique=true, length=20, nullable=false)
+	@JsonProperty
 	private String userId;
 	
 	@Column(length=20, nullable=false)
 	private String password;
 	
 	@Column(length=20, nullable=false)
+	@JsonProperty
 	private String name;
 	
 	@Column(length=30)
+	@JsonProperty
 	private String email;
 	
 	public boolean matchPassword(String newPassword) {
